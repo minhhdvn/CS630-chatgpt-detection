@@ -1,6 +1,7 @@
 # CS630-chatgpt-detection
 
 This is the repository for the project: "X-As-A-Service: Building a Cloud Service for Detecting ChatGPT Generated Content".
+
 Student: Minh Nguyen
 
 Please follow the following steps to run the cloud service.
