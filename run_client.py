@@ -17,24 +17,24 @@ Overall, the COVID-19 pandemic has been a difficult time for all of us, but it h
         pred = response.json()
     else:
         pred = None
-    #print(pred, time.time() - start)
+    print(pred)
 
 
 def test_multiprocessing():
-    num_p = 64
-    num_r = 640
+    num_p = 50
+    num_r = 500
+
 
     total = 0
-
     for _ in range(num_r):
         start = time.time()
         p = multiprocessing.Process(target=test_request, args=('bob',))
         p.start()
         end = time.time()
-
         total += end - start
+
         time.sleep(1/num_p)
-    print(total / num_r * 1000) # latency in milisecond
+    print('Average response time (ms):', total/num_r * 1000)
 
 
 if __name__ == '__main__':

@@ -52,9 +52,9 @@ class Worker(Process):
         
         for rid, score in zip(rids, detection_scores):
             if score >= 0.5:
-                pred = {'machine-generated': 'Yes', 'confidence': score}
+                pred = {'request_id': rid, 'machine-generated': 'Yes', 'confidence': score}
             else:
-                pred = {'machine-generated': 'No', 'confidence': 1 - score}
+                pred = {'request_id': rid, 'machine-generated': 'No', 'confidence': 1 - score}
             result[rid] = pred
 
         return result
